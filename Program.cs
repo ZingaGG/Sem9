@@ -54,6 +54,9 @@ int SumFromMtoN(int n, int m)
     }
 }
 
+// Task 2
+/*
+
 int m = TakeDigit("Input m = ");
 int n = TakeDigit("Input n = ");
 
@@ -65,8 +68,30 @@ if(n<m)
 }
 
 System.Console.WriteLine("Sum = " + SumFromMtoN(n,m));
+*/
+
 /*
 Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
 m = 2, n = 3 -> A(m,n) = 9 
 */
+
+int LevaAckerman(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    else if (n == 0)
+    {
+        return LevaAckerman(m - 1, 1);
+    }
+    else
+    {
+        return LevaAckerman(m - 1, LevaAckerman(m, n - 1));
+    }
+}
+
+int m = TakeDigit("Input m = ");
+int n = TakeDigit("Input n = ");
+System.Console.WriteLine(LevaAckerman(m,n));
