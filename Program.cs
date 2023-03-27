@@ -25,9 +25,11 @@ void NumFromNto1(int n)
     }
 }
 
+// task 1
+/*
 int n = TakeDigit("Input n = ");
 NumFromNto1(n);
-
+*/
 
 
 /*
@@ -37,6 +39,32 @@ M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30
 */
 
+int SumFromMtoN(int n, int m)
+{
+    int result = 0;
+
+    if(m==n)
+    {
+        return result;
+    }
+    else
+    {
+        result += m + SumFromMtoN(n, m+1);
+        return result;
+    }
+}
+
+int m = TakeDigit("Input m = ");
+int n = TakeDigit("Input n = ");
+
+if(n<m)
+{
+    int temp = m;
+    m = n;
+    n = temp;
+}
+
+System.Console.WriteLine("Sum = " + SumFromMtoN(n,m));
 /*
 Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
